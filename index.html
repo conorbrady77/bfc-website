@@ -25,8 +25,8 @@
     font-size: 18px;
     line-height: 1.6;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-  .wrap.wide { max-width: 960px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  .wrap:not(.wide) > * { max-width: 700px; }
 
   header.top { border-bottom: 1px solid var(--soft); padding: 14px 0; }
   header.top .wrap { max-width: 960px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -54,6 +54,10 @@
   p { margin: 0 0 18px; }
   .bar { width: 64px; height: 6px; background: var(--pop); margin: 0 0 24px; }
   .lead { font-size: 22px; color: var(--muted); margin-bottom: 30px; }
+
+  .split { display: grid; gap: 32px; align-items: center; }
+  .split img { width: 100%; height: auto; display: block; border-radius: 8px; }
+  @media (min-width: 760px) { .split { grid-template-columns: 1.3fr 1fr; } .split.flip { grid-template-columns: 1fr 1.3fr; } }
 
   .cards { display: grid; gap: 20px; }
   @media (min-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
@@ -92,11 +96,14 @@
 </header>
 
 <section>
-  <div class="wrap">
-    <div class="bar"></div>
-    <h1>We help traditional finance firms run like fintechs.</h1>
-    <p class="lead">Custom, intelligent systems engineered for efficiency and growth.</p>
-    <a class="btn" href="#contact">Book Strategic Diagnostic (free)</a>
+  <div class="wrap wide split">
+    <div>
+      <div class="bar"></div>
+      <h1>We help traditional finance firms run like fintechs.</h1>
+      <p class="lead">Custom, intelligent systems engineered for efficiency and growth.</p>
+      <a class="btn" href="#contact">Book Strategic Diagnostic (free)</a>
+    </div>
+    <img src="man.jpg" alt="" width="800" height="798">
   </div>
 </section>
 
@@ -126,10 +133,13 @@
 </section>
 
 <section class="soft">
-  <div class="wrap">
-    <h2>The process comes first</h2>
-    <p>A system built on a bad process only makes the bad process faster. So the process comes first, and humans stay very much in the loop: the system gathers, drafts and flags, your people review and decide.</p>
-    <p>AI is how we keep custom software affordable, not the reason to buy it.</p>
+  <div class="wrap wide split flip">
+    <img src="woman.jpg" alt="" width="665" height="800">
+    <div>
+      <h2>The process comes first</h2>
+      <p>A system built on a bad process only makes the bad process faster. So the process comes first, and humans stay very much in the loop: the system gathers, drafts and flags, your people review and decide.</p>
+      <p>AI is how we keep custom software affordable, not the reason to buy it.</p>
+    </div>
   </div>
 </section>
 
