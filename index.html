@@ -32,7 +32,7 @@
 
   /* nav */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 64px; display: flex; align-items: center; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
-  nav .container { max-width: 1320px; display: flex; align-items: center; justify-content: space-between; width: 100%; }
+  nav .container { max-width: 1600px; display: flex; align-items: center; justify-content: space-between; width: 100%; }
   nav img { height: 24px; width: auto; }
   .pill { display: inline-block; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 14px; padding: 11px 26px; border-radius: 100px; letter-spacing: -0.01em; border: 0; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s; }
   .pill:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(0,0,0,.16); }
@@ -55,11 +55,11 @@
 
   /* hero */
   .hero { padding: 150px 0 110px; border-bottom: 1px solid var(--line); }
-  .hero .container { display: grid; gap: 56px; align-items: center; max-width: 1320px; }
+  .hero .container { display: grid; gap: 56px; align-items: center; max-width: 1600px; }
   @media (min-width: 900px) { .hero .container { grid-template-columns: 1fr 1fr; gap: 64px; } }
   .hl { background: linear-gradient(transparent 56%, var(--pop) 56%); padding: 0 .08em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-  .hero h1 { font-size: clamp(40px, 5vw, 68px); margin-bottom: 36px; }
-  .hero .lead { font-size: clamp(20px, 2.4vw, 24px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 26em; margin-bottom: 44px; }
+  .hero h1 { font-size: clamp(40px, 5.4vw, 88px); margin-bottom: 36px; }
+  .hero .lead { font-size: clamp(20px, 2.1vw, 28px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 30em; margin-bottom: 44px; }
   .hero .note { font-size: 15px; color: var(--ink); margin-top: 22px; }
   .portrait { border-radius: 18px; overflow: hidden; }
   .portrait img { width: 100%; height: auto; }
@@ -98,12 +98,23 @@
   .row p { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 32px); line-height: 1.25; letter-spacing: -0.015em; font-weight: 500; }
   .sub { color: var(--ink); font-size: 18px; margin-bottom: 8px; }
 
+  /* solutions */
+  .sol { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+  @media (min-width: 800px) { .sol { grid-template-columns: 1fr 1fr; } }
+  .sol > div { background: #fff; padding: 40px 40px 44px; }
+  .sol .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--accent); display: block; margin-bottom: 18px; }
+  .sol h3 { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 12px; letter-spacing: -0.03em; }
+  .sol p { font-size: 17px; line-height: 1.65; color: var(--ink); }
+  @media (max-width: 700px) { .sol > div { padding: 30px 24px 34px; } }
+
   /* dark */
   .dark { background: var(--deep); color: #f2f2f2; border-bottom: 0; }
   .dark .tag { color: #a9a9a9; }
   .dark p.story { font-size: 20px; font-weight: 300; line-height: 1.8; color: #d4d4d4; max-width: 38em; }
   .phases { display: grid; gap: 1px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.12); margin-top: 56px; }
   @media (min-width: 800px) { .phases { grid-template-columns: repeat(3, 1fr); } }
+  .phase h3 { font-size: 24px; line-height: 1.2; margin-bottom: 12px; color: #fff; letter-spacing: -0.025em; }
+  .phase p.d { font-family: var(--sans); font-size: 16px; line-height: 1.6; color: #d4d4d4; font-weight: 400; }
   .phase { background: var(--deep); padding: 40px 34px; }
   .phase .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--pop); display: block; margin-bottom: 28px; }
   .phase p { font-family: var(--serif); font-size: 24px; line-height: 1.25; font-weight: 500; }
@@ -192,8 +203,9 @@
     <div class="portrait rv"><img src="woman.jpg" alt="" width="665" height="800"></div>
     <div>
       <span class="tag rv">Process first</span>
-      <p class="big rv">A system built on a bad process only makes the <u>bad process faster.</u></p>
-      <p class="rv">So the process comes first, and humans stay very much in the loop: the system gathers, drafts and flags, your people review and decide.</p>
+      <p class="big rv">We start with the process, <u>not the technology.</u></p>
+      <p class="rv">AI has made the technology much easier to build. Good process design has not changed, so that is where we begin.</p>
+      <p class="rv">Humans stay very much in the loop: the system gathers, drafts and flags, your people review and decide.</p>
       <p class="rv"><strong>AI is how we keep custom software affordable, not the reason to buy it.</strong></p>
     </div>
   </div>
@@ -202,13 +214,18 @@
 <section class="section">
   <div class="container">
     <span class="tag rv">Process design</span>
-    <h2 class="rv">What we design and build</h2>
-    <p class="sub rv">Examples of what we design and build:</p>
-    <div class="rows rv">
-      <div class="row"><span class="n">01</span><p>KYC documents, client accounts and bank statements pulled with a short command.</p></div>
-      <div class="row"><span class="n">02</span><p>Credit memos drafted by a trained AI and reviewed by a human, with every source cited. All the information is organised and problems are flagged early, so nothing surfaces for the first time during due diligence.</p></div>
-      <div class="row"><span class="n">03</span><p>Organised client files.</p></div>
-      <div class="row"><span class="n">04</span><p>Custom CRMs and internal tools.</p></div>
+    <h2 class="rv">Ten ways we help a team</h2>
+    <div class="sol rv">
+      <div><span class="n">01</span><h3>KYC and onboarding documents</h3><p>KYC documents, client accounts and bank statements pulled with a short command, then filed where your team expects to find them.</p></div>
+      <div><span class="n">02</span><h3>Credit memos drafted by AI</h3><p>Drafted by a trained AI and reviewed by a human, with every source cited so every fact can be checked.</p></div>
+      <div><span class="n">03</span><h3>Early red flags</h3><p>Gaps and anomalies are flagged at the start of a deal, so no time is spent on leads that go nowhere and nothing surfaces for the first time during due diligence.</p></div>
+      <div><span class="n">04</span><h3>Open banking connections</h3><p>Account data is pulled directly into the deal file through open banking, with no re-keying.</p></div>
+      <div><span class="n">05</span><h3>Credit reporting connections</h3><p>Credit reports are pulled straight into the deal file and into the memo.</p></div>
+      <div><span class="n">06</span><h3>Organised client files</h3><p>One consistent structure for every deal, with each document filed, named and easy to find.</p></div>
+      <div><span class="n">07</span><h3>Document chasing</h3><p>Clients and brokers are reminded for monthly financials and missing documents, so your team stops chasing.</p></div>
+      <div><span class="n">08</span><h3>Pre-call briefings</h3><p>A short briefing before each client call: what you know, what is missing and what to ask.</p></div>
+      <div><span class="n">09</span><h3>Settlement and payment reminders</h3><p>Reminders go out on time, so nobody on the team has to remember to send them.</p></div>
+      <div><span class="n">10</span><h3>Custom CRMs and internal tools</h3><p>Tools shaped around how your team works, replacing the licences you rent today over time. Systems that talk to each other, so nobody re-types anything.</p></div>
     </div>
   </div>
 </section>
@@ -217,11 +234,14 @@
   <div class="container">
     <span class="tag rv">In progress</span>
     <h2 class="rv">What we are building now</h2>
-    <p class="story rv">We are building the start-of-deal process for a UK trade finance lender: the broker's application and every supporting document land in one organised folder, the credit team is alerted straight away, and the first credit memo is drafted for review.</p>
-    <div class="phases rv" aria-hidden="true">
-      <div class="phase"><span class="n">STEP 01</span><p>Application and documents land in one organised folder</p></div>
-      <div class="phase"><span class="n">STEP 02</span><p>The credit team is alerted straight away</p></div>
-      <div class="phase"><span class="n">STEP 03</span><p>The first credit memo is drafted for review</p></div>
+    <p class="story rv">We are building the start-of-deal process for a UK trade finance lender. Different systems talk to each other, the information is pulled in and analysed, and the credit team starts every deal from a prepared file.</p>
+    <div class="phases rv">
+      <div class="phase"><span class="n">STEP 01</span><h3>Documents in one folder</h3><p class="d">The broker's application and every supporting document land in one organised folder.</p></div>
+      <div class="phase"><span class="n">STEP 02</span><h3>Systems connected</h3><p class="d">We connect open banking and credit reporting systems through their APIs, so information is pulled in directly.</p></div>
+      <div class="phase"><span class="n">STEP 03</span><h3>Information analysed</h3><p class="d">The information is analysed and organised, so the team starts from a prepared file, not a pile of documents.</p></div>
+      <div class="phase"><span class="n">STEP 04</span><h3>Red flags raised early</h3><p class="d">Problems are flagged at the start of the process, so no time is wasted on leads that are going nowhere.</p></div>
+      <div class="phase"><span class="n">STEP 05</span><h3>Credit team alerted</h3><p class="d">The credit team is alerted straight away, with the file ready.</p></div>
+      <div class="phase"><span class="n">STEP 06</span><h3>First memo drafted</h3><p class="d">Every fact in the first credit memo carries a citation that can be checked. The credit team reviews it and makes the call.</p></div>
     </div>
   </div>
 </section>
