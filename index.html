@@ -57,6 +57,8 @@
   .hero { padding: 150px 0 110px; border-bottom: 1px solid var(--line); }
   .hero .container { display: grid; gap: 56px; align-items: center; }
   @media (min-width: 900px) { .hero .container { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  .dg { color: var(--accent); }
+  .hl { background: linear-gradient(transparent 56%, var(--pop) 56%); padding: 0 .08em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
   .hero h1 { font-size: clamp(44px, 6.4vw, 84px); margin-bottom: 36px; }
   .hero .lead { font-size: clamp(20px, 2.4vw, 24px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 26em; margin-bottom: 44px; }
   .hero .note { font-size: 15px; color: var(--ink); margin-top: 22px; }
@@ -84,8 +86,8 @@
   .first .container { display: grid; gap: 64px; align-items: center; }
   @media (min-width: 900px) { .first .container { grid-template-columns: .7fr 1.3fr; } }
   .first .big { font-family: var(--serif); font-size: clamp(30px, 4.4vw, 54px); line-height: 1.12; letter-spacing: -0.025em; font-weight: 600; margin-bottom: 32px; }
-  .first .portrait { border-left: 10px solid var(--accent); }
-  .first .big u { text-decoration: none; background: var(--pop); padding: 0 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .first .portrait { border-left: 10px solid var(--pop); }
+  .first .big u { text-decoration: none; background: linear-gradient(transparent 56%, var(--pop) 56%); padding: 0 .08em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
   .first p { color: var(--ink); }
   .first p strong { color: var(--ink); }
   @media (max-width: 899px) { .first .portrait { max-width: 360px; } }
@@ -154,24 +156,17 @@
 <header class="hero">
   <div class="container">
     <div class="copy">
-      <span class="tag rv">Process and systems company</span>
-      <h1 class="rv">We help traditional finance firms run like <em>fintechs.</em></h1>
+      <span class="tag rv">BFC is an IT Services and Operations Consulting Firm.</span>
+      <h1 class="rv">We help <span class="dg">traditional finance</span> firms run like <span class="hl">fintechs.</span></h1>
       <p class="lead rv">Custom, intelligent systems engineered for efficiency and growth.</p>
       <div class="rv">
         <a class="pill big" href="#contact">Discuss a free Small Win</a>
-        <p class="note">We take on a limited number of clients at a time.</p>
+        <p class="note">Founded by a fintech co-founder.</p>
       </div>
     </div>
     <div class="portrait hero-photo rv"><img src="man.jpg" alt="" width="800" height="798"></div>
   </div>
 </header>
-
-<section class="section statement">
-  <div class="container">
-    <p class="big rv">BFC is a process and systems company for traditional finance firms. We design the process first, then engineer the systems that run it.</p>
-    <p class="by rv">Founded by a fintech co-founder</p>
-  </div>
-</section>
 
 <section class="section alt">
   <div class="container">
@@ -179,12 +174,12 @@
     <h2 class="rv">Two ways to work with us</h2>
     <div class="grid2 rv">
       <div class="cell">
-        <span class="n">01</span>
+        <span class="n">Step 01</span>
         <h3>Small Win</h3>
         <p>One or two small projects, free. One process, built and running, so your team and stakeholders see the value before anyone commits to anything.</p>
       </div>
       <div class="cell">
-        <span class="n">02</span>
+        <span class="n">Step 02</span>
         <h3>Custom Build</h3>
         <p>We design your processes with your team, around how your customers like to work, then build the system on your own infrastructure. Over time it replaces the legacy platforms and licences you rent today. Microsoft and Google stay.</p>
         <p class="own">You own the code at the end.</p>
@@ -212,7 +207,7 @@
     <p class="sub rv">Examples of what we design and build:</p>
     <div class="rows rv">
       <div class="row"><span class="n">01</span><p>KYC documents, client accounts and bank statements pulled with a short command.</p></div>
-      <div class="row"><span class="n">02</span><p>Credit memos drafted with every source cited.</p></div>
+      <div class="row"><span class="n">02</span><p>Credit memos drafted by AI with every source cited.</p></div>
       <div class="row"><span class="n">03</span><p>Organised client files.</p></div>
       <div class="row"><span class="n">04</span><p>Custom CRMs and internal tools.</p></div>
     </div>
@@ -254,7 +249,7 @@
     <div class="cols">
       <div>
         <img class="flogo" src="bfc-logo.png" alt="BFC" width="69" height="28">
-        <p>BFC is a process and systems company for traditional finance firms.</p>
+        <p>BFC is an IT Services and Operations Consulting Firm.</p>
       </div>
       <div>
         <h4>Contact</h4>
