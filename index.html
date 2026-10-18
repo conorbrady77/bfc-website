@@ -32,7 +32,7 @@
 
   /* nav */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 64px; display: flex; align-items: center; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
-  nav .container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+  nav .container { max-width: 1320px; display: flex; align-items: center; justify-content: space-between; width: 100%; }
   nav img { height: 24px; width: auto; }
   .pill { display: inline-block; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 14px; padding: 11px 26px; border-radius: 100px; letter-spacing: -0.01em; border: 0; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s; }
   .pill:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(0,0,0,.16); }
@@ -55,11 +55,10 @@
 
   /* hero */
   .hero { padding: 150px 0 110px; border-bottom: 1px solid var(--line); }
-  .hero .container { display: grid; gap: 56px; align-items: center; }
+  .hero .container { display: grid; gap: 56px; align-items: center; max-width: 1320px; }
   @media (min-width: 900px) { .hero .container { grid-template-columns: 1fr 1fr; gap: 64px; } }
-  .dg { color: var(--accent); }
   .hl { background: linear-gradient(transparent 56%, var(--pop) 56%); padding: 0 .08em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-  .hero h1 { font-size: clamp(44px, 6.4vw, 84px); margin-bottom: 36px; }
+  .hero h1 { font-size: clamp(40px, 5vw, 68px); margin-bottom: 36px; }
   .hero .lead { font-size: clamp(20px, 2.4vw, 24px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 26em; margin-bottom: 44px; }
   .hero .note { font-size: 15px; color: var(--ink); margin-top: 22px; }
   .portrait { border-radius: 18px; overflow: hidden; }
@@ -114,7 +113,7 @@
   .contact .container { display: grid; gap: 64px; align-items: start; }
   @media (min-width: 900px) { .contact .container { grid-template-columns: 1fr 1fr; } }
   .contact h2 { font-size: clamp(40px, 6vw, 76px); color: #fff; }
-  .contact h2 em { color: var(--pop); }
+  .contact h2 em { color: var(--deep); }
   .contact .lead { font-size: 26px; font-weight: 600; color: #fff; line-height: 1.4; }
   form { display: grid; gap: 22px; background: #fff; color: var(--ink); border-radius: 18px; padding: 36px; border-top: 10px solid var(--pop); }
   label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
@@ -157,7 +156,7 @@
   <div class="container">
     <div class="copy">
       <span class="tag rv">BFC is an IT Services and Operations Consulting Firm.</span>
-      <h1 class="rv">We help <span class="dg">traditional finance</span> firms run like <span class="hl">fintechs.</span></h1>
+      <h1 class="rv">We help traditional finance firms run like <span class="hl">fintechs.</span></h1>
       <p class="lead rv">Custom, intelligent systems engineered for efficiency and growth.</p>
       <div class="rv">
         <a class="pill big" href="#contact">Discuss a free Small Win</a>
@@ -182,7 +181,7 @@
         <span class="n">Step 02</span>
         <h3>Custom Build</h3>
         <p>We design your processes with your team, around how your customers like to work, then build the system on your own infrastructure. Over time it replaces the legacy platforms and licences you rent today. Microsoft and Google stay.</p>
-        <p class="own">You own the code at the end.</p>
+        <p class="own">You own the code and all IP of what we build.</p>
       </div>
     </div>
   </div>
@@ -231,7 +230,7 @@
   <div class="container">
     <div>
       <h2 class="rv">Discuss a free <em>Small Win</em></h2>
-      <p class="lead rv">We will get back to you shortly.</p>
+      <p class="lead rv">Please leave your details and we will get back with you shortly.</p>
     </div>
     <form id="enquiry" class="rv" novalidate>
       <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
