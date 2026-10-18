@@ -40,6 +40,10 @@
   .pill.pop { background: var(--pop); color: var(--deep); }
   @media (max-width: 480px) { .pill { font-size: 13px; padding: 10px 16px; } nav img { height: 20px; } }
 
+  .navlinks { display: none; gap: 32px; font-size: 15px; font-weight: 600; }
+  @media (min-width: 900px) { .navlinks { display: flex; } }
+  .navlinks a:hover { color: var(--accent); }
+
   /* type */
   h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; }
   h2 { font-size: clamp(34px, 5vw, 60px); margin-bottom: 28px; }
@@ -170,6 +174,7 @@
 <nav>
   <div class="container">
     <img src="bfc-logo.png" alt="BFC" width="59" height="24">
+    <div class="navlinks"><a href="#how">How we work</a><a href="case-study.html">Case study</a></div>
     <a class="pill" href="#contact">Discuss a free Small Win</a>
   </div>
 </nav>
@@ -222,7 +227,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="how">
   <div class="container">
     <span class="tag rv">How we work</span>
     <h2 class="rv">How a project runs, in eight stages</h2>
@@ -262,17 +267,10 @@
 
 <section class="section dark">
   <div class="container">
-    <span class="tag rv">In progress</span>
-    <h2 class="rv">What we are building now</h2>
-    <p class="story rv">We are building the start-of-deal process for a UK trade finance lender. Different systems talk to each other, the information is pulled in and analysed, and the credit team starts every deal from a prepared file.</p>
-    <div class="phases rv">
-      <div class="phase"><span class="n">DOCUMENTS</span><h3>Documents in one folder</h3><p class="d">The broker's application and every supporting document land in one organised folder.</p></div>
-      <div class="phase"><span class="n">CONNECTIONS</span><h3>Systems connected</h3><p class="d">We connect open banking and credit reporting systems through their APIs, so information is pulled in directly.</p></div>
-      <div class="phase"><span class="n">ANALYSIS</span><h3>Information analysed</h3><p class="d">The information is analysed and organised, so the team starts from a prepared file, not a pile of documents.</p></div>
-      <div class="phase"><span class="n">RED FLAGS</span><h3>Red flags raised early</h3><p class="d">Problems are flagged at the start of the process, so no time is wasted on leads that are going nowhere.</p></div>
-      <div class="phase"><span class="n">ALERTS</span><h3>Credit team alerted</h3><p class="d">The credit team is alerted straight away, with the file ready.</p></div>
-      <div class="phase"><span class="n">CREDIT MEMO</span><h3>First memo drafted</h3><p class="d">Every fact in the first credit memo carries a citation that can be checked. The credit team reviews it and makes the call.</p></div>
-    </div>
+    <span class="tag rv">Case study</span>
+    <h2 class="rv">UK Trade Finance Company</h2>
+    <p class="story rv">We are building the start-of-deal process for a UK trade finance lender: the broker's application and every supporting document land in one organised folder, the credit team is alerted straight away, and the first credit memo is drafted for review.</p>
+    <p class="rv" style="margin-top:36px"><a class="pill big" style="background:var(--pop);color:var(--deep)" href="case-study.html">Read the case study</a></p>
   </div>
 </section>
 
@@ -301,8 +299,10 @@
         <p>BFC is an IT Services and Operations Consulting Firm.</p>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4>Site</h4>
         <ul>
+          <li><a href="#how">How we work</a></li>
+          <li><a href="case-study.html">Case study</a></li>
           <li><a href="#contact">Discuss a free Small Win</a></li>
         </ul>
       </div>
