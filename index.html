@@ -56,15 +56,15 @@
   /* hero */
   .hero { padding: 150px 0 110px; border-bottom: 1px solid var(--line); }
   .hero .container { display: grid; gap: 56px; align-items: center; max-width: 1600px; }
-  @media (min-width: 900px) { .hero .container { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  @media (min-width: 900px) { .hero .container { grid-template-columns: 1.2fr .8fr; gap: 64px; } }
   /* hand-drawn marker highlight: slanted, slightly uneven, not a flat rectangle */
-  .hl, .first .big u { text-decoration: none; padding: 0 .16em; margin: 0 -.04em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='%2300FF00' d='M3 20 L100 5 L96 93 L0 100 Z'/%3E%3C/svg%3E") no-repeat 0 100% / 100% 66%; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-  .hero h1 { font-size: clamp(40px, 5.4vw, 88px); margin-bottom: 36px; }
+  .hl, .first .big u { white-space: nowrap; text-decoration: none; padding: 0 .16em; margin: 0 -.04em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='%2300FF00' d='M3 20 L100 5 L96 93 L0 100 Z'/%3E%3C/svg%3E") no-repeat 0 100% / 100% 66%; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hero h1 { font-size: clamp(40px, 4.8vw, 78px); margin-bottom: 36px; }
   .hero .lead { font-size: clamp(20px, 2.1vw, 28px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 30em; margin-bottom: 44px; }
   .hero .note { font-size: 15px; color: var(--ink); margin-top: 22px; }
   .portrait { border-radius: 18px; overflow: hidden; }
   .portrait img { width: 100%; height: auto; }
-  .portrait.hero-photo { border-radius: 18px 18px 0 0; border-bottom: 10px solid var(--pop); }
+  .portrait.hero-photo { border-radius: 18px 18px 0 0; border-bottom: 10px solid var(--pop); width: 100%; max-width: 520px; justify-self: center; }
   @media (max-width: 899px) { .hero { padding-top: 120px; } .portrait.hero-photo { max-width: 520px; } }
 
   /* statement */
@@ -124,7 +124,7 @@
   .contact .container { display: grid; gap: 64px; align-items: start; }
   @media (min-width: 900px) { .contact .container { grid-template-columns: 1fr 1fr; } }
   .contact h2 { font-size: clamp(40px, 6vw, 76px); color: #fff; }
-  .contact h2 em { color: #fff; padding: .02em .22em; margin: 0 -.04em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='%231f1f1f' d='M3 8 L100 0 L96 96 L0 100 Z'/%3E%3C/svg%3E") no-repeat 0 50% / 100% 100%; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .contact h2 em { display: block; color: #fff; padding-left: 1.1em; }
   .contact .lead { font-size: 26px; font-weight: 600; color: #fff; line-height: 1.4; }
   form { display: grid; gap: 22px; background: #fff; color: var(--ink); border-radius: 18px; padding: 36px; border-top: 10px solid var(--pop); }
   label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
@@ -166,12 +166,12 @@
 <header class="hero">
   <div class="container">
     <div class="copy">
-      <span class="tag rv">BFC is an IT Services and Operations Consulting Firm.</span>
+      <span class="tag rv">BFC is an IT Services and Operations Consulting Firm, founded by a fintech co-founder.</span>
       <h1 class="rv">We help traditional finance firms run like <span class="hl">fintechs.</span></h1>
       <p class="lead rv">Custom, intelligent systems engineered for efficiency and growth.</p>
       <div class="rv">
         <a class="pill big" href="#contact">Discuss a free Small Win</a>
-        <p class="note">Founded by a fintech co-founder.</p>
+        
       </div>
     </div>
     <div class="portrait hero-photo rv"><img src="man.jpg" alt="" width="800" height="798"></div>
