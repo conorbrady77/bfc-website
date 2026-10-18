@@ -273,7 +273,6 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:conor@businessflows.co">conor@businessflows.co</a></li>
           <li><a href="#contact">Discuss a free Small Win</a></li>
         </ul>
       </div>
@@ -325,7 +324,7 @@
     var subject = 'Small Win request from ' + name;
 
     window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    statusEl.textContent = 'Your email app should open with the message ready to send. If it does not, write to ' + TO + '.';
+    statusEl.textContent = 'Your email app should open with the message ready to send.';
   });
 
   function fail(msg, field) {
