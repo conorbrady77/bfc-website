@@ -98,6 +98,17 @@
   .row p { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 32px); line-height: 1.25; letter-spacing: -0.015em; font-weight: 500; }
   .sub { color: var(--ink); font-size: 18px; margin-bottom: 8px; }
 
+  /* eight stages */
+  .stages { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+  @media (min-width: 640px) { .stages { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .stages { grid-template-columns: repeat(4, 1fr); } }
+  .stage { background: #fff; padding: 34px 30px 38px; position: relative; }
+  .stage .n { display: block; font-size: 44px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); margin-bottom: 20px; }
+  .stage h3 { font-size: 22px; line-height: 1.2; margin-bottom: 10px; letter-spacing: -0.025em; }
+  .stage p { font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .stage .gate { display: inline-block; margin-top: 16px; background: var(--pop); color: var(--deep); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 30px; }
+  .stages-note { margin-top: 28px; font-size: 19px; font-weight: 600; max-width: 40em; }
+
   /* solutions */
   .sol { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
   @media (min-width: 800px) { .sol { grid-template-columns: 1fr 1fr; } }
@@ -180,7 +191,7 @@
 
 <section class="section alt">
   <div class="container">
-    <span class="tag rv">How we work</span>
+    <span class="tag rv">Working with us</span>
     <h2 class="rv">Two ways to work with us</h2>
     <div class="grid2 rv">
       <div class="cell">
@@ -213,6 +224,25 @@
 
 <section class="section">
   <div class="container">
+    <span class="tag rv">How we work</span>
+    <h2 class="rv">How a project runs, in eight stages</h2>
+    <p class="rv">Every project follows the same eight stages, with written confirmation from you at the stages that matter.</p>
+    <div class="stages rv">
+      <div class="stage"><span class="n">01</span><h3>Process Assessment</h3><p>We agree which process is worth fixing and what success looks like, and confirm it with you in a short email.</p></div>
+      <div class="stage"><span class="n">02</span><h3>Process Definition</h3><p>We write down, step by step, how the process works today, including the exceptions. The person who runs it confirms it is accurate.</p></div>
+      <div class="stage"><span class="n">03</span><h3>Solution Design and Proposal</h3><p>We write down exactly how the system will work: its rules, what it covers and what it does not. Nothing is built until you confirm it in writing.</p><span class="gate">You sign off</span></div>
+      <div class="stage"><span class="n">04</span><h3>Development</h3><p>We build the system, tested on sample data first.</p></div>
+      <div class="stage"><span class="n">05</span><h3>Testing (UAT)</h3><p>We run the system against real past cases to check the results are accurate. Nothing goes live until you sign off.</p><span class="gate">You sign off</span></div>
+      <div class="stage"><span class="n">06</span><h3>Deployment</h3><p>The system goes live with a small batch, not everything at once, and we watch it closely for the first few weeks.</p></div>
+      <div class="stage"><span class="n">07</span><h3>Evaluation</h3><p>You receive a written statement of whether the target from stage 1 was met, partly met or not met.</p></div>
+      <div class="stage"><span class="n">08</span><h3>Ongoing Monitoring</h3><p>Automated monitoring alerts us to any error. On an agreed schedule we review the results with you and recommend next steps.</p></div>
+    </div>
+    <p class="stages-note rv">Nothing is built before stage 3 is confirmed, and nothing goes live before stage 5 is signed off.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <span class="tag rv">Process design</span>
     <h2 class="rv">Ten ways we help a team</h2>
     <div class="sol rv">
@@ -236,12 +266,12 @@
     <h2 class="rv">What we are building now</h2>
     <p class="story rv">We are building the start-of-deal process for a UK trade finance lender. Different systems talk to each other, the information is pulled in and analysed, and the credit team starts every deal from a prepared file.</p>
     <div class="phases rv">
-      <div class="phase"><span class="n">STEP 01</span><h3>Documents in one folder</h3><p class="d">The broker's application and every supporting document land in one organised folder.</p></div>
-      <div class="phase"><span class="n">STEP 02</span><h3>Systems connected</h3><p class="d">We connect open banking and credit reporting systems through their APIs, so information is pulled in directly.</p></div>
-      <div class="phase"><span class="n">STEP 03</span><h3>Information analysed</h3><p class="d">The information is analysed and organised, so the team starts from a prepared file, not a pile of documents.</p></div>
-      <div class="phase"><span class="n">STEP 04</span><h3>Red flags raised early</h3><p class="d">Problems are flagged at the start of the process, so no time is wasted on leads that are going nowhere.</p></div>
-      <div class="phase"><span class="n">STEP 05</span><h3>Credit team alerted</h3><p class="d">The credit team is alerted straight away, with the file ready.</p></div>
-      <div class="phase"><span class="n">STEP 06</span><h3>First memo drafted</h3><p class="d">Every fact in the first credit memo carries a citation that can be checked. The credit team reviews it and makes the call.</p></div>
+      <div class="phase"><span class="n">DOCUMENTS</span><h3>Documents in one folder</h3><p class="d">The broker's application and every supporting document land in one organised folder.</p></div>
+      <div class="phase"><span class="n">CONNECTIONS</span><h3>Systems connected</h3><p class="d">We connect open banking and credit reporting systems through their APIs, so information is pulled in directly.</p></div>
+      <div class="phase"><span class="n">ANALYSIS</span><h3>Information analysed</h3><p class="d">The information is analysed and organised, so the team starts from a prepared file, not a pile of documents.</p></div>
+      <div class="phase"><span class="n">RED FLAGS</span><h3>Red flags raised early</h3><p class="d">Problems are flagged at the start of the process, so no time is wasted on leads that are going nowhere.</p></div>
+      <div class="phase"><span class="n">ALERTS</span><h3>Credit team alerted</h3><p class="d">The credit team is alerted straight away, with the file ready.</p></div>
+      <div class="phase"><span class="n">CREDIT MEMO</span><h3>First memo drafted</h3><p class="d">Every fact in the first credit memo carries a citation that can be checked. The credit team reviews it and makes the call.</p></div>
     </div>
   </div>
 </section>
