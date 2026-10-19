@@ -78,6 +78,8 @@
   /* two ways grid */
   .grid2 { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
   @media (min-width: 800px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+  .grid3 { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+  @media (min-width: 900px) { .grid3 { grid-template-columns: repeat(3, 1fr); } }
   .cell { background: #fff; padding: 56px 48px; position: relative; overflow: hidden; transition: background .3s; }
   .cell::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--pop); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
   .cell:hover::before { transform: scaleX(1); }
@@ -139,7 +141,7 @@
   .contact .container { display: grid; gap: 64px; align-items: start; }
   @media (min-width: 900px) { .contact .container { grid-template-columns: 1fr 1fr; } }
   .contact h2 { font-size: clamp(40px, 6vw, 76px); color: #fff; }
-  .contact h2 em { display: block; color: #fff; padding-left: 1.1em; }
+  .contact h2 em { display: block; color: #fff; }
   .contact .lead { font-size: 26px; font-weight: 600; color: #fff; line-height: 1.4; }
   form { display: grid; gap: 22px; background: #fff; color: var(--ink); border-radius: 18px; padding: 36px; border-top: 10px solid var(--pop); }
   label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
@@ -173,8 +175,8 @@
 
 <nav>
   <div class="container">
-    <img src="bfc-logo.png" alt="BFC" width="59" height="24">
-    <div class="navlinks"><a href="#how">How we work</a></div>
+    <a href="./"><img src="bfc-logo.png" alt="BFC" width="59" height="24"></a>
+    <div class="navlinks"><a href="about.html">About us</a></div>
     <a class="pill" href="#contact">Discuss a free Small Win</a>
   </div>
 </nav>
@@ -197,8 +199,8 @@
 <section class="section alt">
   <div class="container">
     <span class="tag rv">Working with us</span>
-    <h2 class="rv">Two ways to work with us</h2>
-    <div class="grid2 rv">
+    <h2 class="rv">Three steps to working with us</h2>
+    <div class="grid3 rv">
       <div class="cell">
         <span class="n">Step 01</span>
         <h3>Small Win</h3>
@@ -206,11 +208,17 @@
       </div>
       <div class="cell">
         <span class="n">Step 02</span>
+        <h3>Interim Period</h3>
+        <p>Two months at a reduced fee, with delivery every month. You see what a monthly delivery looks like, and together we agree a fair continuing monthly fee for step 3.</p>
+      </div>
+      <div class="cell">
+        <span class="n">Step 03</span>
         <h3>Custom Build</h3>
         <p>We design your processes with your team, around how your customers like to work, then build the system on your own infrastructure. Over time it replaces the legacy platforms and licences you rent today. Microsoft and Google stay.</p>
         <p class="own">You own the code and all IP of what we build.</p>
       </div>
     </div>
+    <p class="rv" style="margin-top:36px"><a class="pill big" href="about.html#charge">How we charge</a></p>
   </div>
 </section>
 
@@ -224,25 +232,6 @@
       <p class="rv">Humans stay very much in the loop: the system gathers, drafts and flags, your people review and decide.</p>
       <p class="rv"><strong>AI is how we keep custom software affordable, not the reason to buy it.</strong></p>
     </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="container">
-    <span class="tag rv">How we work</span>
-    <h2 class="rv">How a project runs, in eight stages</h2>
-    <p class="rv">Every project follows the same eight stages, with written confirmation from you at the stages that matter.</p>
-    <div class="stages rv">
-      <div class="stage"><span class="n">01</span><h3>Process Assessment</h3><p>We agree which process is worth fixing and what success looks like, and confirm it with you in a short email.</p></div>
-      <div class="stage"><span class="n">02</span><h3>Process Definition</h3><p>We write down, step by step, how the process works today, including the exceptions. The person who runs it confirms it is accurate.</p></div>
-      <div class="stage"><span class="n">03</span><h3>Solution Design and Proposal</h3><p>We write down exactly how the system will work: its rules, what it covers and what it does not. Nothing is built until you confirm it in writing.</p><span class="gate">You sign off</span></div>
-      <div class="stage"><span class="n">04</span><h3>Development</h3><p>We build the system, tested on sample data first.</p></div>
-      <div class="stage"><span class="n">05</span><h3>Testing (UAT)</h3><p>We run the system against real past cases to check the results are accurate. Nothing goes live until you sign off.</p><span class="gate">You sign off</span></div>
-      <div class="stage"><span class="n">06</span><h3>Deployment</h3><p>The system goes live with a small batch, not everything at once, and we watch it closely for the first few weeks.</p></div>
-      <div class="stage"><span class="n">07</span><h3>Evaluation</h3><p>You receive a written statement of whether the target from stage 1 was met, partly met or not met.</p></div>
-      <div class="stage"><span class="n">08</span><h3>Ongoing Monitoring</h3><p>Automated monitoring alerts us to any error. On an agreed schedule we review the results with you and recommend next steps.</p></div>
-    </div>
-    <p class="stages-note rv">Nothing is built before stage 3 is confirmed, and nothing goes live before stage 5 is signed off.</p>
   </div>
 </section>
 
@@ -292,7 +281,7 @@
       <div>
         <h4>Site</h4>
         <ul>
-          <li><a href="#how">How we work</a></li>
+          <li><a href="about.html">About us</a></li>
           <li><a href="#contact">Discuss a free Small Win</a></li>
         </ul>
       </div>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us | Business Flows Consultancy</title>
+<meta name="description" content="How BFC works with traditional finance firms, how a project runs and how we charge.">
+<link rel="icon" href="bfc-logo.png">
+<style>
+  @font-face { font-family: Inter; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/inter-latin-wght-normal.woff2) format('woff2'); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #333333;
+    --deep: #1f1f1f;
+    --bg: #FFFFFF;
+    --soft: #EFEFEF;
+    --line: rgba(0,0,0,0.09);
+    --muted: #333333;
+    --accent: #008F11;
+    --pop: #00FF00;
+    --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 56px; }
+  @media (max-width: 700px) { .container { padding: 0 24px; } }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  /* nav */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 64px; display: flex; align-items: center; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+  nav .container { max-width: 1600px; display: flex; align-items: center; justify-content: space-between; width: 100%; }
+  nav img { height: 24px; width: auto; }
+  .pill { display: inline-block; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 14px; padding: 11px 26px; border-radius: 100px; letter-spacing: -0.01em; border: 0; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s; }
+  .pill:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(0,0,0,.16); }
+  .pill.big { font-size: 18px; padding: 18px 44px; }
+  .pill.pop { background: var(--pop); color: var(--deep); }
+  @media (max-width: 480px) { .pill { font-size: 13px; padding: 10px 16px; } nav img { height: 20px; } }
+
+  .navlinks { display: none; gap: 32px; font-size: 15px; font-weight: 600; }
+  @media (min-width: 900px) { .navlinks { display: flex; } }
+  .navlinks a:hover { color: var(--accent); }
+
+  /* type */
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; }
+  h2 { font-size: clamp(34px, 5vw, 60px); margin-bottom: 28px; }
+  h3 { font-size: 30px; line-height: 1.15; margin-bottom: 14px; }
+  em { font-style: normal; color: var(--accent); }
+  p + p { margin-top: 18px; }
+  .tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; }
+  .tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--pop); box-shadow: 0 0 0 0 rgba(0,255,0,.5); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,255,0,.45); } 50% { box-shadow: 0 0 0 7px rgba(0,255,0,0); } }
+  .section { padding: 128px 0; border-bottom: 1px solid var(--line); }
+  @media (max-width: 700px) { .section { padding: 84px 0; } }
+  .alt { background: #fff; }
+
+  /* hero */
+  .hero { padding: 150px 0 110px; border-bottom: 1px solid var(--line); }
+  .hero .container { display: grid; gap: 56px; align-items: center; max-width: 1600px; }
+  @media (min-width: 900px) { .hero .container { grid-template-columns: 1.2fr .8fr; gap: 64px; } }
+  /* hand-drawn marker highlight: slanted, slightly uneven, not a flat rectangle */
+  .hl, .first .big u { white-space: nowrap; text-decoration: none; padding: 0 .16em; margin: 0 -.04em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='%2300FF00' d='M3 20 L100 5 L96 93 L0 100 Z'/%3E%3C/svg%3E") no-repeat 0 100% / 100% 66%; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hero h1 { font-size: clamp(40px, 4.8vw, 78px); margin-bottom: 36px; }
+  .hero .lead { font-size: clamp(20px, 2.1vw, 28px); font-weight: 400; line-height: 1.6; color: var(--ink); max-width: 30em; margin-bottom: 44px; }
+  .hero .note { font-size: 15px; color: var(--ink); margin-top: 22px; }
+  .portrait { border-radius: 18px; overflow: hidden; }
+  .portrait img { width: 100%; height: auto; }
+  .portrait.hero-photo { border-radius: 18px 18px 0 0; border-bottom: 10px solid var(--pop); width: 100%; max-width: 520px; justify-self: center; }
+  @media (max-width: 899px) { .hero { padding-top: 120px; } .portrait.hero-photo { max-width: 520px; } }
+
+  /* statement */
+  .statement p.big { font-family: var(--serif); font-size: clamp(28px, 4.2vw, 50px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; max-width: 22em; letter-spacing: -0.03em; }
+  .statement .by { margin-top: 36px; font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+  /* two ways grid */
+  .grid2 { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+  @media (min-width: 800px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+  .grid3 { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+  @media (min-width: 900px) { .grid3 { grid-template-columns: repeat(3, 1fr); } }
+  .cell { background: #fff; padding: 56px 48px; position: relative; overflow: hidden; transition: background .3s; }
+  .cell::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--pop); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+  .cell:hover::before { transform: scaleX(1); }
+  .cell .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--accent); margin-bottom: 40px; display: block; }
+  .cell p { color: var(--ink); }
+  .cell .own { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-weight: 600; color: var(--ink); }
+  @media (max-width: 700px) { .cell { padding: 40px 28px; } }
+
+  /* process first */
+  .first .container { display: grid; gap: 64px; align-items: center; }
+  @media (min-width: 900px) { .first .container { grid-template-columns: .7fr 1.3fr; } }
+  .first .big { font-family: var(--serif); font-size: clamp(30px, 4.4vw, 54px); line-height: 1.12; letter-spacing: -0.025em; font-weight: 600; margin-bottom: 32px; }
+  .first .portrait { border-left: 10px solid var(--pop); }
+  .first p { color: var(--ink); }
+  .first p strong { color: var(--ink); }
+  @media (max-width: 899px) { .first .portrait { max-width: 360px; } }
+
+  /* rows */
+  .rows { margin-top: 24px; border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 56px 1fr; gap: 12px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .row .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--accent); }
+  .row p { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 32px); line-height: 1.25; letter-spacing: -0.015em; font-weight: 500; }
+  .sub { color: var(--ink); font-size: 18px; margin-bottom: 8px; }
+
+  /* eight stages */
+  .stages { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+  @media (min-width: 640px) { .stages { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .stages { grid-template-columns: repeat(4, 1fr); } }
+  .stage { background: #fff; padding: 34px 30px 38px; position: relative; }
+  .stage .n { display: block; font-size: 44px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); margin-bottom: 20px; }
+  .stage h3 { font-size: 22px; line-height: 1.2; margin-bottom: 10px; letter-spacing: -0.025em; }
+  .stage p { font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .stage .gate { display: inline-block; margin-top: 16px; background: var(--pop); color: var(--deep); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 30px; }
+  .stages-note { margin-top: 28px; font-size: 19px; font-weight: 600; max-width: 40em; }
+
+  /* solutions */
+  .sol { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+  @media (min-width: 800px) { .sol { grid-template-columns: 1fr 1fr; } }
+  .sol > div { background: #fff; padding: 40px 40px 44px; }
+  .sol .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--accent); display: block; margin-bottom: 18px; }
+  .sol h3 { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 12px; letter-spacing: -0.03em; }
+  .sol p { font-size: 17px; line-height: 1.65; color: var(--ink); }
+  @media (max-width: 700px) { .sol > div { padding: 30px 24px 34px; } }
+
+  /* dark */
+  .dark { background: var(--deep); color: #f2f2f2; border-bottom: 0; }
+  .dark .tag { color: #a9a9a9; }
+  .dark p.story { font-size: 20px; font-weight: 300; line-height: 1.8; color: #d4d4d4; max-width: 38em; }
+  .phases { display: grid; gap: 1px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.12); margin-top: 56px; }
+  @media (min-width: 800px) { .phases { grid-template-columns: repeat(3, 1fr); } }
+  .phase h3 { font-size: 24px; line-height: 1.2; margin-bottom: 12px; color: #fff; letter-spacing: -0.025em; }
+  .phase p.d { font-family: var(--sans); font-size: 16px; line-height: 1.6; color: #d4d4d4; font-weight: 400; }
+  .phase { background: var(--deep); padding: 40px 34px; }
+  .phase .n { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--pop); display: block; margin-bottom: 28px; }
+  .phase p { font-family: var(--serif); font-size: 24px; line-height: 1.25; font-weight: 500; }
+
+  /* contact */
+  .contact { border-bottom: 0; background: var(--accent); color: #fff; }
+  .contact .container { display: grid; gap: 64px; align-items: start; }
+  @media (min-width: 900px) { .contact .container { grid-template-columns: 1fr 1fr; } }
+  .contact h2 { font-size: clamp(40px, 6vw, 76px); color: #fff; }
+  .contact h2 em { display: block; color: #fff; }
+  .contact .lead { font-size: 26px; font-weight: 600; color: #fff; line-height: 1.4; }
+  form { display: grid; gap: 22px; background: #fff; color: var(--ink); border-radius: 18px; padding: 36px; border-top: 10px solid var(--pop); }
+  label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  label .opt { font-weight: 400; letter-spacing: .05em; text-transform: none; }
+  input, textarea { width: 100%; font: inherit; font-size: 18px; padding: 13px 14px; border: 2px solid #cfcfcf; border-radius: 8px; background: #fff; color: var(--ink); }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  textarea { min-height: 90px; resize: vertical; }
+  #status { min-height: 26px; font-weight: 600; color: var(--accent); }
+  #status.err { color: #b00020; }
+  form .pill { width: 100%; }
+
+  footer { background: var(--deep); color: #e9e9e9; padding: 72px 0 32px; }
+  footer .cols { display: grid; gap: 40px; }
+  @media (min-width: 800px) { footer .cols { grid-template-columns: 1.4fr 1fr 1fr; } }
+  footer img.flogo { height: 28px; width: auto; filter: brightness(0) invert(1); margin-bottom: 18px; }
+  footer h4 { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; font-weight: 700; }
+  footer p { font-size: 16px; line-height: 1.6; max-width: 24em; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; font-size: 16px; }
+  footer a:hover { color: var(--pop); }
+  footer .base { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  /* reveal (only when JS is on) */
+  .js .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .js .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } .tag::before { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<style>
+  .ab-hero { padding: 150px 0 90px; border-bottom: 1px solid var(--line); }
+  .ab-hero h1 { font-size: clamp(40px, 6vw, 80px); margin-bottom: 28px; }
+  .ab-hero .lead { font-size: clamp(20px, 2.2vw, 26px); line-height: 1.6; max-width: 32em; }
+  .ab-text { font-size: 20px; line-height: 1.7; max-width: 36em; }
+  .ab-text + .ab-text { margin-top: 18px; }
+  .ab-text strong { color: var(--ink); }
+</style>
+</head>
+<body id="top">
+
+<nav>
+  <div class="container">
+    <a href="./"><img src="bfc-logo.png" alt="BFC" width="59" height="24"></a>
+    <div class="navlinks"><a href="about.html">About us</a></div>
+    <a class="pill" href="./#contact">Discuss a free Small Win</a>
+  </div>
+</nav>
+
+<header class="ab-hero">
+  <div class="container">
+    <span class="tag">About us</span>
+    <h1>About BFC</h1>
+    <p class="lead">BFC is an IT Services and Operations Consulting Firm, founded by a fintech co-founder.</p>
+  </div>
+</header>
+
+<section class="section" id="how">
+  <div class="container">
+    <span class="tag rv">How we work</span>
+    <h2 class="rv">How a project runs, in eight stages</h2>
+    <p class="rv">Every project follows the same eight stages, with written confirmation from you at the stages that matter.</p>
+    <div class="stages rv">
+      <div class="stage"><span class="n">01</span><h3>Process Assessment</h3><p>We agree which process is worth fixing and what success looks like, and confirm it with you in a short email.</p></div>
+      <div class="stage"><span class="n">02</span><h3>Process Definition</h3><p>We write down, step by step, how the process works today, including the exceptions. The person who runs it confirms it is accurate.</p></div>
+      <div class="stage"><span class="n">03</span><h3>Solution Design and Proposal</h3><p>We write down exactly how the system will work: its rules, what it covers and what it does not. Nothing is built until you confirm it in writing.</p><span class="gate">You sign off</span></div>
+      <div class="stage"><span class="n">04</span><h3>Development</h3><p>We build the system, tested on sample data first.</p></div>
+      <div class="stage"><span class="n">05</span><h3>Testing (UAT)</h3><p>We run the system against real past cases to check the results are accurate. Nothing goes live until you sign off.</p><span class="gate">You sign off</span></div>
+      <div class="stage"><span class="n">06</span><h3>Deployment</h3><p>The system goes live with a small batch, not everything at once, and we watch it closely for the first few weeks.</p></div>
+      <div class="stage"><span class="n">07</span><h3>Evaluation</h3><p>You receive a written statement of whether the target from stage 1 was met, partly met or not met.</p></div>
+      <div class="stage"><span class="n">08</span><h3>Ongoing Monitoring</h3><p>Automated monitoring alerts us to any error. On an agreed schedule we review the results with you and recommend next steps.</p></div>
+    </div>
+    <p class="stages-note rv">Nothing is built before stage 3 is confirmed, and nothing goes live before stage 5 is signed off.</p>
+  </div>
+</section>
+
+<section class="section" id="charge">
+  <div class="container">
+    <span class="tag">How we charge</span>
+    <h2>A fixed fee, never a metered bill</h2>
+    <p class="ab-text"><strong>Step 01</strong> is free. You see a small project built and running before you commit to anything.</p>
+    <p class="ab-text"><strong>Step 02</strong> is two months at a reduced fee. We deliver every month, so you see what a month of working together looks like.</p>
+    <p class="ab-text"><strong>Step 03</strong> is a fixed monthly fee, agreed with you after step 2. Usage costs such as AI and hosting are included in that fee, so you never receive a bill that changes with usage.</p>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:0">
+  <div class="container">
+    <span class="tag">Capacity</span>
+    <h2>A limited number of clients</h2>
+    <p class="ab-text">We take on a limited number of clients at a time.</p>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div>
+      <h2>Discuss a free <em>Small Win</em></h2>
+      <p class="lead">Please leave your details and we will get back with you shortly.</p>
+    </div>
+    <div><a class="pill big" style="background:#fff;color:var(--deep)" href="./#contact">Discuss a free Small Win</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <img class="flogo" src="bfc-logo.png" alt="BFC" width="69" height="28">
+        <p>BFC is an IT Services and Operations Consulting Firm.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="./#contact">Discuss a free Small Win</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Business Flows Consultancy. All rights reserved.</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
